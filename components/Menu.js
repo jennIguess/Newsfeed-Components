@@ -1,6 +1,6 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
 
-let menuItems = [
+const menuItems = [
   'Students',
   'Faculty',
   "What's New",
@@ -31,3 +31,65 @@ let menuItems = [
 
   Step 6: Use 'menuMaker' to create a menu using the 'menuItems' array, and append the returned menu to the header.
 */
+
+
+
+
+const menuMaker = (items) => {
+  //elements
+  const menuDiv = document.createElement('div');
+  
+ const list = document.createElement('ul');
+
+  // class names
+menuDiv.classList.add('menu');
+
+list.classList.add('list');
+
+//text content
+menuDiv.textContent = list.textContent;
+list.textContent = items.forEach(item => {
+  document.createElement('li');
+})
+
+//parent/child
+document.getElementsByTagName('header');
+header.appendChild(menuDiv);
+menuDiv.appendChild(list);
+list.appendChild(li);
+
+return menuDiv;
+}
+
+const menuComponent = document.querySelector('header')
+header.appendChild(menuMaker([menuItems]));
+
+/*const list = document.createElement('ul');
+const menuDiv = document.createElement('div');
+menuDiv.className = "menu";
+const menuMaker = () => {
+[menuItems].forEach(item => {
+  document.createElement('li');
+  return [];
+});
+const listItems = document.getElementsByTagName('li');
+listItems.forEach(item => {list.appendChild(listItems)
+});
+
+menuDiv.appendChild(list);
+
+
+ 
+const menuButton = querySelector('.menu-button');
+menuButton.addEventListener('click', () => {
+  menuButton.classList.toggle('.menu--open');
+
+
+})
+
+return menuMaker;
+
+}
+const menuComponent = querySelector('header');
+
+menuComponent.appendChild(menuMaker([menuItems]));*/
