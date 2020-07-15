@@ -111,3 +111,80 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+//STEP 1: 
+
+ const articleMaker = (data) => {
+
+//elements
+const articleDiv = document.createElement('div');
+
+const articleH2 = document.createElement('h2');
+
+const articleDate = document.createElement('p');
+
+const articleP1 = document.createElement('p');
+
+const articleP2 = document.createElement('p');
+
+const articleP3 = document.createElement('p');
+
+const spanExpandButton = document.createElement('span');
+
+//classes
+
+articleDiv.classList.add('article');
+
+articleDate.classList.add('date');
+
+spanExpandButton.classList.add('expandButton');
+
+
+
+//text content
+
+articleH2.textContent = [data].title;
+
+articleDate.textContent = [data].date;
+
+articleP1.textContent = [data].firstParagraph;
+
+articleP2.textContent = [data].secondParagraph;
+
+articleP3.textContent = [data].thirdParagraph;
+
+spanExpandButton.textContent = "+";
+
+
+//parent/child relationships
+
+articleDiv.appendChild(articleH2);
+articleDiv.appendChild(articleDate);
+articleDiv.appendChild(articleP1);
+articleDiv.appendChild(articleP2);
+articleDiv.appendChild(articleP3);
+articleDiv.appendChild(spanExpandButton);
+
+//event listener
+const togglebutton = document.getElementsByClassName(articleDiv);
+spanExpandButton.addEventListener("click", () => {
+  articleDiv.classList.toggle('.article-open');
+})
+
+  
+
+
+return articleDiv;
+
+
+ }
+
+ const articleComponent = articleMaker([data]);
+ const articles = document.querySelector('.articles');
+ data.forEach(item => {
+  articles.appendChild(articleComponent);
+
+ })
+ 
+
+console.log("hello");
